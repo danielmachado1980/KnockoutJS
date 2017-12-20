@@ -20,10 +20,29 @@ namespace MVC.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contatos()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Gerenciar contatos";
 
+            return View();
+        }
+
+        public ActionResult AlterarSenha()
+        {
+            ViewBag.Message = "Alterar senha";
+
+            return View();
+        }
+
+        public ActionResult AlterarDados()
+        {
+            ViewBag.Message = "Alterar dados";
+
+            return View();
+        }
+
+        public ActionResult Login()
+        {
             return View();
         }
     }

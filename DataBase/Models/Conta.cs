@@ -7,18 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WCF.Models
+namespace DataBase.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Conta
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("Conta")]
+    public class Conta
     {
         public Conta()
         {
             this.Contato = new HashSet<Contato>();
         }
-    
+
+        [Key]
         public int IdConta { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }

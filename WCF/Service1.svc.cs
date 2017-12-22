@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using WCF.Models;
 
 namespace WCF
 {
@@ -51,15 +50,15 @@ namespace WCF
         //}
 
         //[WebInvoke(BodyStyle = WebMessageBodyStyle.Bare, ResponseFormat = WebMessageFormat.Json)]
-        public List<Models.Conta> GetAllContas()
-        {
-            List<Models.Conta> lstContas = new List<Models.Conta>();
-            using (var db = new ProvaEntities())
-            {
-                lstContas = db.Conta.ToList();
-                return lstContas;
-            }
-        }
+        //public List<Models.Conta> GetAllContas()
+        //{
+        //    List<Models.Conta> lstContas = new List<Models.Conta>();
+        //    using (var db = new ProvaEntities())
+        //    {
+        //        lstContas = db.Conta.ToList();
+        //        return lstContas;
+        //    }
+        //}
 
         public int AddUser(string Name, string Email)
         {

@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -72,43 +73,12 @@
     <Content Include="App_Data\Prova_log.ldf">
       <DependentUpon>Prova.mdf</DependentUpon>
     </Content>
-    <Content Include="Models\ProvaEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProvaEntities.Context.cs</LastGenOutput>
-      <DependentUpon>ProvaEntities.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\ProvaEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProvaEntities.edmx</DependentUpon>
-      <LastGenOutput>ProvaEntities.cs</LastGenOutput>
-    </Content>
     <Content Include="Service1.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Conta.cs">
-      <DependentUpon>ProvaEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Contato.cs">
-      <DependentUpon>ProvaEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProvaEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProvaEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProvaEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProvaEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProvaEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProvaEntities.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -119,13 +89,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\ProvaEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProvaEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ProvaEntities.edmx.diagram">
-      <DependentUpon>ProvaEntities.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\WCFProvaFase2 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

@@ -20,11 +20,11 @@ namespace WCF
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Adicione suas operações de serviço aqui
-        [OperationContract]
-        List<Models.Conta> GetAllContas();
+        //[OperationContract]
+        //List<Models.Conta> GetAllContas();
 
-        [OperationContract]
-        List<Contato> GetAllContatos();
+        //[OperationContract]
+        //List<Contato> GetAllContatos();
 
         [OperationContract]
         int AddUser(string Name, string Email);

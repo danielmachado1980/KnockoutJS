@@ -7,13 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WCF.Models
+namespace DataBase.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Contato
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("Contato")]
+    public class Contato
     {
+        [Key]
         public int IdContato { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }

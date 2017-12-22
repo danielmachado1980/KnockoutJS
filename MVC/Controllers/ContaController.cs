@@ -17,12 +17,13 @@ namespace MVC.Controllers
 
         public ActionResult Cadastrar(Conta conta)
         {
-            using (var db = new FuncionariosEntities())
-            {
-                db.Funcionarios.Add(funcionario);
-                db.SaveChanges();
-                return Json(funcionario, JsonRequestBehavior.AllowGet);
-            }
+            //using (var db = new FuncionariosEntities())
+            //{
+            //    db.Funcionarios.Add(funcionario);
+            //    db.SaveChanges();
+            //    return Json(funcionario, JsonRequestBehavior.AllowGet);
+            //}
+            return View();
         }
 
 

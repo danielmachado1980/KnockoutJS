@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WCF.Models;
 
 namespace WCF
 {
@@ -28,6 +29,61 @@ namespace WCF
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        //public UserDetail GetAllUserById(int id)
+        //{
+
+        //    TestDBEntities tstDb = new TestDBEntities();
+        //    var lstUsr = from k in tstDb.UserDetails where k.Id == id select k;
+        //    UserDetail usr = new UserDetail();
+        //    foreach (var item in lstUsr)
+        //    {
+
+        //        usr.Id = item.Id;
+        //        usr.Name = item.Name;
+        //        usr.Email = item.Email;
+
+
+        //    }
+
+        //    return usr;
+        //}
+
+        //[WebInvoke(BodyStyle = WebMessageBodyStyle.Bare, ResponseFormat = WebMessageFormat.Json)]
+        public List<Models.Conta> GetAllContas()
+        {
+            List<Models.Conta> lstContas = new List<Models.Conta>();
+            using (var db = new ProvaEntities())
+            {
+                lstContas = db.Conta.ToList();
+                return lstContas;
+            }
+        }
+
+        public int AddUser(string Name, string Email)
+        {
+            throw new NotImplementedException();
+        }
+
+        Contato IService1.GetAllUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateUser(int Id, string Name, string Email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteUserById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Contato> GetAllContatos()
+        {
+            throw new NotImplementedException();
         }
     }
 }

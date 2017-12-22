@@ -20,6 +20,24 @@ namespace WCF
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Adicione suas operações de serviço aqui
+        [OperationContract]
+        List<Models.Conta> GetAllContas();
+
+        [OperationContract]
+        List<Contato> GetAllContatos();
+
+        [OperationContract]
+        int AddUser(string Name, string Email);
+
+        [OperationContract]
+        Contato GetAllUserById(int id);
+
+        [OperationContract]
+        int UpdateUser(int Id, string Name, string Email);
+
+        [OperationContract]
+        int DeleteUserById(int Id);
+       
     }
 
 
@@ -44,4 +62,31 @@ namespace WCF
             set { stringValue = value; }
         }
     }
+
+    [DataContract]
+    public class Contato
+    {
+        [DataMember]
+        public int IdContato { get; set; }
+        [DataMember]
+        public string Nome { get; set; }
+        [DataMember]
+        public string Email { get; set; }
+        [DataMember]
+        public string Telefone { get; set; }
+        [DataMember]
+        public int IdConta { get; set; }
+    }
+
+    [DataContract]
+    public class Conta
+    {
+        [DataMember]
+        public int IdConta { get; set; }
+        [DataMember]
+        public string Login { get; set; }
+        [DataMember]
+        public string Senha { get; set; }
+    }
+
 }
